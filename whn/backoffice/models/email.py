@@ -8,6 +8,8 @@ class Email(models.Model):
     PERSONAL = 'PE'
     BUSINESS = 'BE'
     WORK = 'WK'
+
+    id = models.UUIDField()
     EMAIL_TYPE_CHOICES = [
         (PERSONAL, 'Personal Email'),
         (BUSINESS, 'Business Email'),

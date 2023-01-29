@@ -5,6 +5,7 @@ from patient_record import PatientRecord
 
 class PatientBio(models.Model):
     """Maintains patient biographical information"""
+    id = models.UUIDField()
     control_num = models.ForeignKey(PatientRecord, on_delete=models.CASCADE)
     last_name = models.CharField(max_length=50)
     first_name = models.CharField(max_length=50)

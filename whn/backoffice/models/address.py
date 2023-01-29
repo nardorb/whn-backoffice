@@ -4,6 +4,7 @@ from patient_record import PatientRecord
 
 
 class Address(models.Model):
+    id = models.UUIDField()
     control_num = models.ForeignKey(PatientRecord, on_delete=models.CASCADE)
     type = models.CharField()  # Address type
     line1 = models.CharField()

@@ -8,6 +8,8 @@ class Phone(models.Model):
     HOME = 'HP'
     CELL = 'CP'
     WORK = 'WK'
+
+    id = models.UUIDField()
     PHONE_TYPE_CHOICES = [
         (HOME, 'Home Phone'),
         (CELL, 'Cell Phone'),

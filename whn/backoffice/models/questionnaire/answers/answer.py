@@ -4,7 +4,7 @@ from whn.backoffice.models.patient_record import PatientRecord
 
 
 class Answer(models.Model):
-    ans_id = models.UUIDField()
+    id = models.UUIDField()
     patient_id = models.ForeignKey(PatientRecord, on_delete=models.CASCADE)
     question_id = models.ForeignKey(Question, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)

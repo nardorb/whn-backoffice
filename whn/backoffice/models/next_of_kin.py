@@ -5,6 +5,7 @@ from patient_record import PatientRecord
 
 class NOK(models.Model):
     """Maintains patient next-of-kin"""
+    id = models.UUIDField()
     control_num = models.ForeignKey(PatientRecord, on_delete=models.CASCADE)
     last_name = models.CharField(max_length=50)
     first_name = models.CharField(max_length=50)
