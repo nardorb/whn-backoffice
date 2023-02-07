@@ -1,9 +1,8 @@
 from django.db import models
-from .answers.answer import Answer
 
 
 class Question(models.Model):
-    """Represents a question in a questionnaire. The answers of which will form a part
+    """Represents a question in a questionnaire. The answer of which will form a part
     of the patient record and instruct practitioners on diagnosis and treatment options
     which will form a part of """
     # List of question types
@@ -31,14 +30,14 @@ class Question(models.Model):
     ANSWER_TYPE_CHOICES = [
         (CHOICE, 'Choice Field'),
         (FLOAT, 'Floating Point Number Field'),
-        (FREE_TYPE, 'Free Type Field'),
+        (FREE_TYPE, 'Free Type Text Field'),
         (MULTI_CHOICE, 'Multiple Choice Field'),
         (MULTIPLE_CHOICE_TEXT, 'Multiple Choice Text Field'),
         (NUMBER, 'Number Field'),
         (TEXT, 'Text Field'),
     ]
 
-    id = models.UUIDField()
+    id = models.UUIDField(primary_key=True)
     category = models.CharField(
         max_length=2,
         choices=QUESTION_TYPE_CHOICES,
