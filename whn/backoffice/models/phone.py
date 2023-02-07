@@ -1,6 +1,6 @@
 from django.db import models
 
-from patient_record import PatientRecord
+from .patient_record import PatientRecord
 
 
 class Phone(models.Model):
@@ -9,12 +9,13 @@ class Phone(models.Model):
     CELL = 'CP'
     WORK = 'WK'
 
-    id = models.UUIDField()
     PHONE_TYPE_CHOICES = [
         (HOME, 'Home Phone'),
         (CELL, 'Cell Phone'),
         (WORK, 'Work Phone'),
     ]
+
+    id = models.UUIDField(primary_key=True)
     type = models.CharField(
         max_length=2,
         choices=PHONE_TYPE_CHOICES,

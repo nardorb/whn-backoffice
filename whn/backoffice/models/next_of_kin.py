@@ -1,11 +1,11 @@
 from django.db import models
 
-from patient_record import PatientRecord
+from .patient_record import PatientRecord
 
 
-class NOK(models.Model):
+class NextOfKin(models.Model):
     """Maintains patient next-of-kin"""
-    id = models.UUIDField()
+    id = models.UUIDField(primary_key=True)
     control_num = models.ForeignKey(PatientRecord, on_delete=models.CASCADE)
     last_name = models.CharField(max_length=50)
     first_name = models.CharField(max_length=50)

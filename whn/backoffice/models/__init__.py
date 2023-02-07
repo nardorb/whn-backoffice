@@ -3,7 +3,7 @@ from .dependent import Dependent
 from .email import Email
 from .employment import Employment
 from .household_info import HouseholdInfo
-from .next_of_kin import NOK
+from .next_of_kin import NextOfKin
 from .patient_bio import PatientBio
 from .patient_record import PatientRecord
 from .phone import Phone
