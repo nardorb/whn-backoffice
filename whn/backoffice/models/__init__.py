@@ -7,4 +7,5 @@ from .next_of_kin import NextOfKin
 from .patient_bio import PatientBio
 from .patient_record import PatientRecord
 from .phone import Phone
+from .practitioner import Practitioner
 from .questionnaire import *

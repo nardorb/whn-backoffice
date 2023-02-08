@@ -21,7 +21,15 @@ class Email(models.Model):
         choices=EMAIL_TYPE_CHOICES,
         default=PERSONAL,
     )
-    email = models.EmailField(max_length=255, blank=True, null=True)
+    email = models.EmailField(
+        max_length=255,
+        unique=True,
+        blank=True,
+        null=True
+    )
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
-    control_num = models.ForeignKey(PatientRecord, on_delete=models.CASCADE)
+    control_num = models.ForeignKey(
+        PatientRecord,
+        on_delete=models.CASCADE
+    )

@@ -8,6 +8,7 @@ from .models.household_info import HouseholdInfo
 from .models.next_of_kin import NextOfKin
 from .models.patient_bio import PatientBio
 from .models.patient_record import PatientRecord
+from .models.practitioner import Practitioner
 from .models.questionnaire.question import Question
 from .models.questionnaire.answer.float import Float
 from .models.questionnaire.answer.number import Number
@@ -23,6 +24,9 @@ admin.site.register(HouseholdInfo)
 admin.site.register(NextOfKin)
 admin.site.register(PatientBio)
 admin.site.register(PatientRecord)
+
+# Staff Records
+admin.site.register(Practitioner)
 
 # Questionnaire
 admin.site.register(Question)
