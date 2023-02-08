@@ -18,7 +18,10 @@ class Address(models.Model):
     ]
 
     id = models.UUIDField(primary_key=True)
-    control_num = models.ForeignKey(PatientRecord, on_delete=models.CASCADE)
+    control_num = models.ForeignKey(
+        PatientRecord,
+        on_delete=models.CASCADE
+    )
     type = models.CharField(
         max_length=2,
         choices=ADDRESS_TYPE_CHOICES,

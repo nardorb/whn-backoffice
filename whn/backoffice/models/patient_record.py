@@ -1,5 +1,7 @@
 from django.db import models
 
+from .practitioner import Practitioner
+
 
 class PatientRecord(models.Model):
     """Maintains patient record information and identifiers"""
@@ -22,5 +24,9 @@ class PatientRecord(models.Model):
         default=ACTIVE
     )
     notes = models.TextField()
+    registered_by = models.ForeignKey(
+        Practitioner,
+        on_delete=models.SET_NULL,
+    )
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)

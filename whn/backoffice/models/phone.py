@@ -21,7 +21,11 @@ class Phone(models.Model):
         choices=PHONE_TYPE_CHOICES,
         default=CELL,
     )
-    phone_number = models.CharField(max_length=20, blank=True, null=True)
+    phone_number = models.CharField(
+        max_length=20,
+        blank=True,
+        null=True
+    )
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
     control_num = models.ForeignKey(PatientRecord, on_delete=models.CASCADE)
